@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int id, stock, cantidad, opcion;
+    int id, stock, cantidad, opcion,val,val2,val3;
     float precio, total_ganancias = 0;
     char nombre[30];
 
@@ -30,15 +30,50 @@ int main() {
 
         switch(opcion) {
             case 1:
-                printf("Ingrese la cantidad a vender: ");
-                scanf("%d", &cantidad);
+                while (cantidad<1|| val !=1 || cantidad>stock)
+                {
+                    printf("Ingrese la cantidad a vender: ");
+                    val=scanf("%d", &cantidad);
+                    if (cantidad<1)
+                    {
+                        printf("La cantidad no puede ser negativo ni cero, vuelva a ingresar\n");
+                    }
+                    if (val !=1)
+                    {
+                        printf("El valor ingresado es incorrecto, vuelva a ingresar\n");
+                    }
+                    
+                    if (cantidad>stock)
+                    {
+                        printf("No se puede realizar la venta, no existe suficiente stock, vuelva a ingresar\n");
+                    }
+                    
+                }
+                
                 
                 
                 break;
 
             case 2:
+            while (cantidad<1|| val !=1 || cantidad>stock)
+            {
                 printf("Ingrese la cantidad a agregar al stock: ");
-                scanf("%d", &cantidad);
+                scanf("%d", &cantidad);;
+                if (cantidad<1)
+                {
+                    printf("La cantidad no puede ser negativo ni cero, vuelva a ingresar\n");
+                }
+                if (val !=1)
+                {
+                    printf("El valor ingresado es incorrecto, vuelva a ingresar\n");
+                }
+                
+                if (cantidad>stock)
+                {
+                    printf("No se puede realizar la venta, no existe suficiente stock, vuelva a ingresar\n");
+                }
+                
+            }
                 
                 
                 break;
